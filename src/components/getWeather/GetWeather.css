@@ -1,0 +1,50 @@
+h1{
+    text-align: center;
+    padding: 2rem;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.meteo {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 60%;
+  justify-content: center;
+  align-items: center;
+}
+
+.noCity {
+  display: none;
+}
+
+.city {
+  display: block;
+}
+
+.favoris {
+  width: 30%;
+  padding-left: 2rem;
+}
+
+.favoris > h2 {
+    margin-top: none;
+}
+  
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+li > button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+}

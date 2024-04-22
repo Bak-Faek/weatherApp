@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./GetWeather.css";
 
 export default function GetWeather() {
   const [weather, setWeather] = useState({
@@ -47,18 +48,16 @@ export default function GetWeather() {
       });
   }
 
-  function addToFavorites(city) {
-    if (city !== "Veuillez entrer un ville") {
-      const updatedFavorites = [...favorites];
-      const isAlreadyFavorite = updatedFavorites.some(
-        (fav) => fav.city === weather.city
-      );
-      if (!isAlreadyFavorite) {
-        updatedFavorites.push(weather);
-        setFavorites(updatedFavorites);
-      } else {
-        console.log("Cette ville est déjà dans vos favoris !");
-      }
+  function addToFavorites() {
+    const updatedFavorites = [...favorites];
+    const isAlreadyFavorite = updatedFavorites.some(
+      (fav) => fav.city === weather.city
+    );
+    if (!isAlreadyFavorite) {
+      updatedFavorites.push(weather);
+      setFavorites(updatedFavorites);
+    } else {
+      console.log("Cette ville est déjà dans vos favoris !");
     }
   }
 
@@ -71,29 +70,39 @@ export default function GetWeather() {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input placeholder="City" name="city" />
-        <button type="submit">Recherche</button>
-      </form>
-
-      <img src={weather.icon} alt="" />
-      <div>{weather.temp}°C</div>
-      <div>
-        {weather.city}
-        <button onClick={() => addToFavorites(weather.city)}>
-          Ajouter aux favoris
-        </button>
+    <section>
+      <h1>Votre Météo</h1>
+      <div className="container">
+      <div className="meteo">
+        <form onSubmit={handleSubmit}>
+          <input placeholder="City" name="city" />
+          <button type="submit">Recherche</button>
+        </form>
+        <div>
+          {weather.city}
+          <button
+            onClick={() => addToFavorites(weather.city)}
+            className={
+              weather.city !== "Veuillez entrer un ville" ? "city" : "noCity"
+            }
+          >
+            Ajouter aux favoris
+          </button>
+        </div>
+        <div>{weather.temp}°C</div>
+        <img src={weather.icon} alt="" />
       </div>
-
-      <h2>Vos favoris</h2>
-      <ul>
-        {favorites.map((fav, index) => (
-          <li key={index}>
-            <button onClick={() => showWeather(fav.city)}>{fav.city}</button>
-          </li>
-        ))}
-      </ul>
-    </div>
+      <div className="favoris">
+        <h2>Vos favoris</h2>
+        <ul>
+          {favorites.map((fav, index) => (
+            <li key={index}>
+              <button onClick={() => showWeather(fav.city)}>{fav.city}</button>
+            </li>
+          ))}
+        </ul>
+      </div>
+      </div>
+    </section>
   );
 }
