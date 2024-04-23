@@ -1,0 +1,15 @@
+.WeatherForecast {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Styles for WeatherForecastItem */
+  .WeatherForecastItem {
+    text-align: center;
+    margin: 10px;
+  }
+  
+  .WeatherForecastItem img {
+    margin-top: 10px;
+  }

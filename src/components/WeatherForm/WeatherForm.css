@@ -1,0 +1,28 @@
+.WeatherForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.WeatherForm input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #4fc3f7;
+}
+
+.WeatherForm button {
+  width: 100%;
+  padding: 10px;
+  background-color: #0084ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.WeatherForm button:hover {
+  background-color: #005bb5;
+}

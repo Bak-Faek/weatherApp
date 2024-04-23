@@ -1,0 +1,18 @@
+.WeatherDisplay {
+    text-align: center;
+  }
+  
+  .WeatherDisplay .city {
+    color: #0084ff;
+    margin-bottom: 10px;
+  }
+  
+  .WeatherDisplay .temp {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0084ff;
+  }
+  
+  .WeatherDisplay img {
+    margin-top: 10px;
+  }

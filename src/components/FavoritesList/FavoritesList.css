@@ -1,0 +1,23 @@
+.FavoritesList ul {
+    padding: 0;
+    list-style: none;
+  }
+  
+  .FavoritesList li {
+    margin-bottom: 10px;
+  }
+  
+  .FavoritesList button {
+    padding: 5px 10px;
+    background-color: #0084ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .FavoritesList button:hover {
+    background-color: #005bb5;
+  }
+  
