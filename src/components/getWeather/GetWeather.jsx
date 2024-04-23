@@ -11,7 +11,7 @@ export default function GetWeather() {
 
   useEffect(() => {
     fetchForecast("Lyon");
-  }, []);
+  },)
 
   return (
     <section className="container">
